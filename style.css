@@ -1,39 +1,19 @@
-*{
-    padding: 0;
+/* General Styles */
+body {
     margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #FFD7C4, #9DBDFF, #9DBDFF, #9DBDFF, #9DBDFF, #FFD7C4);
+    color: #333;
+  }
+  
+  /* Navbar */
+.navbar {
+    background: #FFD7C4;
+    padding: 10px 30px;
 }
 
-.body{
-    background-color: #FFD7C4;
-    font-size: medium;
-}
-
-.container{
-    font-size: medium;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-areas: 'sidebar''content''footer';
-    grid-template-columns: 1fr;
-    grid-template-rows: 130px 880px 250px;
-}
-
-.content{
-    background-color: #9DBDFF;
-    padding: 3em;
-}
-
-.sidebar{
-    background: linear-gradient(to bottom,#FFD7C4,#FFD7C4,#9DBDFF);
-    padding: 2em;
-}
-
-.footer{
-    padding: 1em;
-    background-color: #C4D7FF;
-}
-
-nav ul{
+.navbar ul{
     margin: 0;
     padding: 0;
     display: flex;
@@ -41,13 +21,230 @@ nav ul{
     text-align: center;
 }
 
-nav li{
+.navbar li{
     list-style: none;
     padding: 0;
     font-weight: bold;
     font-family: sans-serif;
 }
 
-nav li a{
+.navbar li a{
     transition: 0,3s;
 }
+
+.navbar li a{
+    text-decoration: none;
+    color: black;
+    margin: auto;
+}
+
+.navbar li a::after{
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: rgb(1, 90, 140);
+    display: block;
+    bottom: 0;
+    left: -8px;
+    opacity: 0;
+    transition: all 0.2s;
+    pointer-events: none;
+}
+
+.navbar li a:hover::after{
+    opacity: 1;
+    color: #7695FF;
+}
+
+.signin {
+    font-weight: bold;
+    background: #7695FF;
+    width: 160px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  .signin:hover, .signin:focus, .signin:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: left;
+    padding: 100px 30px;
+  }
+  
+  .hero h1 {
+    font-size: 70px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+
+  .btn-primary {
+    background: #7695FF;
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    font-size: 25px;
+    font-style: bold;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  /* Cara Order */
+  .cara-order {
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .cara-order .steps {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .cara-order .steps .img {
+    align-items: center;
+  }
+  
+  .diskus {
+    background: #7695FF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    margin: 10px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  .diskus:hover, .diskus:focus, .diskus:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  .cara-order .bayar {
+    background: #7695FF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    margin: 10px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  .bayar:hover, .bayar:focus, .bayar:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .cara-order .proses {
+    background: #7695FF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    margin: 10px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  .proses:hover, .proses:focus, .proses:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .cara-order .acc {
+    background: #7695FF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    margin: 10px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  .acc:hover, .acc:focus, .acc:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  /* Layanan */
+  .layanan {
+    text-align: center;
+    padding: 60px 30px;
+  }
+  
+  .layanan .services {
+    display: grid;
+    justify-content: left;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .UI {
+    width: 550px;
+    height: 200px;
+    background: #7695FF;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  .UI:hover, .UI:focus, .UI:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  .Graf {
+    width: 550px;
+    height: 200px;
+    background: #7695FF;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+
+  .Graf:hover, .Graf:focus, .Graf:active{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  
+  /* Footer */
+  .footer {
+    background: #ffc3a0;
+    color: #333;
+    text-align: center;
+    padding: 3px;
+  }
+  
+  .footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+  }
