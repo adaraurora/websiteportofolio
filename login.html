@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="close-button" onclick="window.location.href='index.html'">
+                <div class="circle">
+                    ✖
+                </div>
+            </div>
+            <div class="login-title">
+                <h5>Sabisu Design</h5>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="username" name="username" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Password" pattern="[0-9]*" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="login-button">Login</button>
+                </div>
+            </form>
+            <div id="errorBox" class="error-box hidden">
+                <p id="errorMessage"></p>
+            </div>
+            <p class="forgot-password"><a href="#">Lupa password?</a></p>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
