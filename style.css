@@ -7,35 +7,50 @@ body {
   color: #333;
 }
 
-html {
+html,* {
   scroll-behavior: smooth;
+ 
+}
+
+a{
+  text-decoration: none;
+  color: white;
 }
 
 /* Navbar */
 .navbar {
   background: #FFD7C4;
   padding: 10px 30px;
+  
 }
 
 .navbar ul {
   margin: 0;
-  padding: 0;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   text-align: center;
+  
 }
 
 .navbar li {
   list-style: none;
-  padding: 0;
+  padding: 0px;
   font-weight: bold;
+  text-align: center;
+  justify-items: center;
+  display: flex;
+  
+  
 }
+
 
 .navbar li a {
   text-decoration: none;
   color: black;
   margin: auto;
   transition: 0.3s;
+  
 }
 
 .navbar li a:hover {
@@ -45,12 +60,14 @@ html {
 .signin {
   font-weight: bold;
   background: #7695FF;
+  height: 55px;
   width: 160px;
   padding: 10px;
   text-align: center;
   border: none;
   color: white;
   border-radius: 50px;
+  border: 1px solid;
   cursor: pointer;
   transition-duration: 0.3s;
 }
@@ -58,6 +75,9 @@ html {
 .signin:hover {
   transform: scale(1.1);
 }
+
+
+
 
 /* Hero Section */
 .hero {
@@ -110,9 +130,125 @@ html {
   margin: 10px;
   transition-duration: 0.3s;
 }
-
+.huruf{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 40px;
+  
+  
+}
 .cara-order .steps div:hover {
   transform: scale(1.1);
+}
+.container-isi {
+  display: grid;
+  flex-wrap: wrap;
+  height: 100vh;
+  grid-template: 1fr 1fr 1fr 1fr;
+  
+}
+
+.testi1{
+  background-color: #7695FF;
+  height: 204px;
+  width: 438px;
+  border-radius:50px ;
+  margin-left: 100px;
+  text-align:center;
+  border:2px solid;
+ transition: 200ms;
+}
+
+.testi1:hover{
+  transform: scale(1.1);
+}
+
+.testi1>.Jerome{
+  margin-top: -10px;
+  margin-left: -60px;
+}
+
+.testi2{
+  background-color: #7695FF;
+  margin-top: px;
+  height: 204px;
+  width: 438px;
+  display: flex;
+  border-radius:  50px;
+  margin-left: 100px;
+  text-align:center;
+  border: 2px solid;
+  transition: 200ms;
+}
+
+.testi2:hover{
+  transform: scale(1.1);
+}
+
+.testi2>.Deddy{
+  margin-top: -10px;
+  margin-left: -60px;
+}
+
+.testi3-testi4{
+  display: flex;
+  margin: auto;
+}
+
+.sub{
+  display: grid;
+}
+
+.testi3{
+  background-color: #7695FF;
+  display: flex;
+  height: 204px;
+  width: 430px; 
+  border-radius:  50px;
+  margin-left: 100px;
+  text-align:center;
+  margin-top: 50px;
+  border: 2px solid;  
+  transition: 200ms;
+}
+
+.testi3:hover{
+  transform: scale(1.1);
+}
+
+.testi3 > .JessNoLimit{
+  margin-top: -10px;
+  margin-left: -60px;
+}
+
+.testi4{
+  background-color: #7695FF;
+  display: flex;
+  height: 204px;
+  width: 438px;
+  border-radius: 50px;
+  margin-top: 50px;
+  margin-left: 100px;
+  border:  2px solid;
+  text-align: center;
+ transition: 200ms;
+}
+
+.testi4:hover{
+  transform: scale(1.1);
+}
+
+.testi4>.Azizi
+{
+  margin-top: -10px;
+  margin-left: -60px;
+}
+
+.testi1-testi2{
+  display: flex;
+  margin: auto;
 }
 
 /* Layanan */
@@ -148,7 +284,15 @@ html {
   text-align: center;
   padding: 3px;
 }
-
+.ig{
+  width: 50px;
+}
+.konten-ig{
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 25px;
+}
 .footer .footer-content {
   display: flex;
   justify-content: space-around;
@@ -166,8 +310,54 @@ html {
   }
 }
 
-h1, img, p, h3{
+h1, img, p, h3, h2{
   animation: appear linear;
   animation-range: entry 0%;
   animation-timeline: view();
+}
+/* slide img */
+
+@keyframes slide {
+  from{
+    transform: translateX();
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+.slider-konten{
+  padding: 10px 0px 0px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.isinya, .isinya1{
+  display: inline-block;
+  animation: 30s slide infinite linear;
+}
+
+.isinya img, .isinya1 img{
+  margin: 20px;
+  width: 270px;
+  transition: 200ms;
+}
+
+#gambar1geser{
+  width: 240px;}
+#gambar4geser{
+  width: 321px;
+}
+#gambar5geser{
+  width: 340px;
+}
+#gambar6geser{
+  width: 385px;
+}
+#gambar7geser, #gambar8geser{
+  width: 640px;
+}
+
+.isinya img:hover, .isinya1 img:hover{
+  transform: scale(1.1);
 }

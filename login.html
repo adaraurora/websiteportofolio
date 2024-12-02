@@ -9,31 +9,22 @@
 <body>
     <div class="login-container">
         <div class="login-box">
+            <h2>Login</h2>
             <div class="close-button" onclick="window.location.href='index.html'">
                 <div class="circle">
                     ✖
                 </div>
-            </div>
-            <div class="login-title">
-                <h5>Sabisu Design</h5>
-            </div>
-            <form id="loginForm">
-                <div class="form-group">
-                    <input type="email" id="username" name="username" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" name="password" placeholder="Password" pattern="[0-9]*" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="login-button">Login</button>
-                </div>
-            </form>
-            <div id="errorBox" class="error-box hidden">
-                <p id="errorMessage"></p>
-            </div>
-            <p class="forgot-password"><a href="#">Lupa password?</a></p>
+            </div>  
+            
+            <input type="text" name="user" id="user" placeholder="Enter Your Username">
+            <p id="alert1"></p>
+            <input type="password" name="pw" id="pw" placeholder="Enter Your Password">
+            <p id="alert2"></p>
+            <button id="klik"><b>Login</b></button>
+            <p style="color: rgb(189, 216, 205); margin-top: 0; ">Lupa Password?</p>
         </div>
     </div>
-    <script src="login.js"></script>
+    
 </body>
+    <script src="loginplsjadi.js"></script>
 </html>
