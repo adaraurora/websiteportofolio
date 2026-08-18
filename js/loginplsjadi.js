@@ -38,7 +38,7 @@ document.getElementById("klik").onclick = function(){
         document.getElementById("alert2").textContent = ``
     }
     else {
-        window.location.href ="index1.html"
+        window.location.href ="./index1.html"
     }
 }
 
