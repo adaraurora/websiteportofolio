@@ -63,3 +63,28 @@ if (noBtn && logoutKonten) {
     };
 
 }
+
+
+// ================= HAMBURGER MENU =================
+
+// Ambil elemen hamburger dan ul dari navbar
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.querySelector('.navbar ul');
+
+// Tambahkan event klik pada hamburger
+hamburger.addEventListener('click', () => {
+    // Toggle class untuk memunculkan sidebar menu
+    navMenu.classList.toggle('slide-active');
+    
+    // Toggle class untuk mengubah bentuk hamburger menjadi 'X'
+    hamburger.classList.toggle('toggle');
+});
+
+// Opsional: Tutup sidebar jika salah satu menu/link diklik
+const navLinks = document.querySelectorAll('.navbar ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('slide-active');
+        hamburger.classList.remove('toggle');
+    });
+});

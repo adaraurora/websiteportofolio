@@ -1,80 +1,143 @@
+* {
+  box-sizing: border-box; /* Mencegah input & padding meluber */
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: linear-gradient(to bottom,#499fc7, #3868c2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: linear-gradient(to bottom, #499fc7, #3868c2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
-.login-container{
-    background-color:azure;
-    border-radius: 50px;
-    width: 500px;
-    height: 420px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+/* Container utama fleksibel di laptop & HP */
+.login-container {
+  position: relative; /* Acuan posisi tombol close */
+  background-color: azure;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.login-box{
-    width: 400px;
-    
-}
-.close-button{
-    background-color: black;
-    position:relative;
-    top: -50px;
-    left: -20px;
-    width:40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
+.login-box {
+  width: 100%;
 }
 
-.circle{
-    color: white;
-    font-size: 20px;
+/* Tombol Close Rapi di Dalam Kartu Pojok Kiri Atas */
+.close-button {
+  background-color: black;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.2s ease;
 }
 
-#alert1,#alert2{
-    margin-top: 0;
-    margin-bottom: 50px;
-    font-size: 13px;
-    color: red;
+.close-button:hover {
+  transform: scale(1.1);
 }
 
-#user, #pw{
-    border-radius: 10px;
-    height: 30px;
-    width: 89.5%;
-    justify-content: left;
-    padding-left: 20px;
-    padding-right: 20px;
-    
+.circle {
+  color: white;
+  font-size: 12px;
 }
 
-#klik{
-    width: 100%;
-    border-radius: 10px;
-    height: 36px;
-    background-color:#7695FF ;
-    border: none;
-    color: white;
-    filter: brightness(100%);
-    transition: 200ms;
-}
-#klik:hover{
-    filter: brightness(75%);
-    cursor: pointer;
+h2 {
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-size: 32px;
+  color: #333;
 }
 
-h2{
-    margin: 0;
-    text-align: center;
-    font-size: 40px;
+#user, #pw {
+  border-radius: 10px;
+  height: 42px;
+  width: 100%;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+#alert1, #alert2 {
+  margin-top: 5px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: red;
+  min-height: 15px;
+}
+
+#klik {
+  width: 100%;
+  border-radius: 10px;
+  height: 42px;
+  background-color: #7695FF;
+  border: none;
+  color: white;
+  font-size: 16px;
+  transition: 200ms;
+  margin-top: 5px;
+}
+
+#klik:hover {
+  filter: brightness(85%);
+  cursor: pointer;
+}
+
+.lupa-pw {
+  color: #3868c2 !important;
+  margin-top: 15px !important;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* ========================================= */
+/* MEDIA QUERY HP (MAX 768px)                */
+/* ========================================= */
+@media screen and (max-width: 768px) {
+  .login-container {
+    width: 90% !important;
+    border-radius: 25px !important;
+    padding: 35px 20px 25px 20px !important;
+  }
+
+  h2 {
+    font-size: 26px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .close-button {
+    top: 15px !important;
+    left: 15px !important;
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  #user, #pw {
+    height: 38px !important;
+    font-size: 13px !important;
+  }
+
+  #klik {
+    height: 40px !important;
+    font-size: 15px !important;
+  }
 }

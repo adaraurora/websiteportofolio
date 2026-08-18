@@ -284,19 +284,48 @@ a{
   text-align: center;
   padding: 3px;
 }
-.ig{
-  width: 50px;
-}
-.konten-ig{
-  display: flex;
-  align-items: center;
-  position: relative;
-  right: 25px;
-}
+
+/* Penataan Layout Footer */
 .footer .footer-content {
   display: flex;
   justify-content: space-around;
   padding-bottom: 20px;
+  text-align: left; /* Agar About dan Contact rata kiri dan rapi */
+}
+
+/* --------------------------------------------------- */
+/* PERBAIKAN IKON WA & IG (MODE LAPTOP)                */
+/* --------------------------------------------------- */
+
+/* Gabungkan class .ig dan .wa agar ukurannya seragam */
+.ig {
+  width: 35px; /* Ukuran pas untuk desktop, gambar 498px otomatis mengecil */
+  height: 35px;
+  object-fit: contain;
+  margin-right: 10px; /* Jarak antara logo dan teks */
+}
+.wa {
+  width: 25px; /* Ukuran pas untuk desktop, gambar 498px otomatis mengecil */
+  height: 25px;
+  object-fit: contain;
+  margin-right: 10px; /* Jarak antara logo dan teks */
+}
+
+
+
+/* Teks WA (p biasa di dalam contact) dibuat sejajar dengan logo */
+.contact p {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+/* Teks IG */
+.konten-ig {
+  display: flex;
+  align-items: center;
+  /* position: relative; dan right: 25px; dihapus saja agar 
+     logo IG dan WA sejajar sempurna rata kiri */
 }
 
 @keyframes appear{
@@ -360,4 +389,280 @@ h1, img, p, h3, h2{
 
 .isinya img:hover, .isinya1 img:hover{
   transform: scale(1.1);
+}
+
+/* Sembunyikan hamburger di tampilan Laptop/PC */
+.hamburger {
+  display: none;
+}
+
+/* ========================================= */
+/* RESPONSIVE DESAIN & HAMBURGER (MAX 768px) */
+/* ========================================= */
+@media screen and (max-width: 768px) {
+  
+  /* --- 1. NAVBAR & HAMBURGER --- */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  }
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: auto;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Posisi Fixed Tombol saat berubah jadi X */
+  .hamburger.toggle {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 1002 !important; /* Di atas sidebar */
+  }
+
+  /* Animasi Bikin Silang X */
+  .hamburger.toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Sidebar Menu */
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    width: 220px;
+    height: 100vh;
+    background-color: #FFD7C4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 80px;
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+  }
+  
+  .navbar ul.slide-active {
+    transform: translateX(0);
+  }
+
+  .navbar li img {
+    height: 50px !important;
+  }
+
+  .navbar li button {
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+
+  /* --- 2. TEKS & HERO SECTION --- */
+  .hero { padding: 40px 20px; text-align: center; }
+  .hero h1 { font-size: 26px !important; }
+  .huruf { font-size: 18px; height: auto; padding: 25px 15px; text-align: center; }
+  p { font-size: 13px; }
+  h1 { font-size: 22px !important; }
+  h2 { font-size: 18px !important; }
+  h3 { font-size: 16px !important; }
+
+  .btn-primary, .signin {
+    width: 80%;
+    max-width: 240px;
+    font-size: 14px;
+    padding: 12px;
+    height: auto;
+  }
+  .hero img {
+    width: 75%; float: none !important; display: block; margin: 0 auto 20px auto;
+  }
+
+  /* --- 3. CARA ORDER (SAMAKAN TINGGI KARTU) --- */
+  .cara-order .steps {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .cara-order .steps div {
+    width: 135px !important;
+    padding: 15px 10px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    border-radius: 15px !important;
+    height: auto !important;
+  }
+
+  .cara-order .steps img { 
+    height: 60px !important; 
+    width: auto !important;
+    padding: 0 !important; 
+    margin-bottom: 10px !important;
+    object-fit: contain !important;
+  }
+
+  /* --- 4. LAYANAN --- */
+  .layanan .services { display: flex; flex-direction: column; align-items: center; }
+  .layanan .services div {
+    width: 90%;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  .layanan .services img { height: 90px !important; float: none !important; margin-bottom: 10px; }
+  .layanan .services p { padding-left: 0 !important; }
+  img[src="img/illustrasi layanan.png"] { width: 75%; float: none; display: block; margin: 0 auto; padding: 20px 0 !important; }
+
+  /* --- 5. TESTIMONIAL --- */
+  .container-isi {
+    height: auto !important;
+    padding: 20px 10px !important;
+  }
+
+  .isi {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 65px !important;
+    margin-top: 40px !important;
+  }
+
+  .testi1-testi2, .testi3-testi4 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 65px !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .testi1, .testi2, .testi3, .testi4 {
+    width: 85% !important;
+    max-width: 270px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 15px 15px 15px !important;
+    box-sizing: border-box !important;
+    border-radius: 25px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .testi1 > img, .testi2 > img, .testi3 > img, .testi4 > img {
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    margin: -35px auto 5px auto !important;
+    float: none !important;
+  }
+
+  .sub {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .sub img {
+    width: 60px !important;
+    margin: 5px 0 !important;
+  }
+
+  .sub .text, .sub .text2, .sub .text3, .sub .text4 {
+    padding: 0 !important;
+  }
+
+  .sub h2 {
+    margin: 5px 0 !important;
+    padding: 0 !important;
+  }
+
+  .sub p {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Slider */
+  .isinya img, .isinya1 img { width: 140px !important; margin: 10px; }
+
+  /* --- 6. FOOTER --- */
+  .footer .footer-content {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px !important;
+    align-items: start !important;
+    text-align: left !important;
+    padding: 10px 15px !important;
+  }
+
+  .footer .about, .footer .contact {
+    width: 100% !important;
+  }
+
+  .footer .about h4, .footer .contact h4 {
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+  }
+
+  .footer .about p, .footer .contact p {
+    font-size: 11px !important;
+    margin: 6px 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .footer .wa, .footer .ig {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+  }
+
+  .footer .konten-ig {
+    position: static !important;
+    right: auto !important;
+    justify-content: flex-start !important;
+  }
+
+  .footer .logo {
+    grid-column: span 2 !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+  }
+
+  .footer .logo img {
+    height: 60px !important;
+  }
 }
